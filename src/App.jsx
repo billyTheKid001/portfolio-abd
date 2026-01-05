@@ -1,4 +1,4 @@
-import About from './components/About';
+import About from './components/about';
 import Project from './components/Project';
 import pdp from './assets/pdp.png';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -16,8 +16,8 @@ function App() {
         {/* MENU */}
         <nav className="flex space-x-4 md:space-x-8 bg-[#2f2f2f]/70 backdrop-blur-md py-2 px-6 rounded-full text-sm md:text-base font-semibold">
           <a href="App.jsx" className="hover:text-[#60A5FA] transition">ACCUEIL</a>
-          <a href="about" className="hover:text-[#60A5FA] transition">A PROPOS</a>
-          <a href="project" className="hover:text-[#60A5FA] transition">PROJET</a>
+          <a href="About" className="hover:text-[#60A5FA] transition">A PROPOS</a>
+          <a href="Project" className="hover:text-[#60A5FA] transition">PROJET</a>
         </nav>
 
         {/* LANGUE (drapeau) */}
@@ -45,8 +45,8 @@ function App() {
 
           {/* ICONES SOCIAUX */}
           <div className="flex space-x-6 text-[#60A5FA] text-3xl">
-            <a href="#"><i className="fa-brands fa-github hover:text-blue-400 transition"></i></a>
-            <a href="https://www.linkedin.com/in/abdoulaye-cissokho-b5429b257/"><i className="fa-brands fa-linkedin hover:text-blue-400 transition"></i></a>
+            <a href="https://github.com/billyTheKid001" target='blank'> <i className="fa-brands fa-github hover:text-blue-400 transition"></i></a>
+            <a href="https://www.linkedin.com/in/abdoulaye-cissokho-b5429b257/" target='blank'><i className="fa-brands fa-linkedin hover:text-blue-400 transition"></i></a>
             <a href="mailto:cissokhoabdoulaye069@gmail.com"><i className="fa-solid fa-envelope hover:text-blue-400 transition"></i></a>
           </div>
 
@@ -72,8 +72,8 @@ function App() {
       </section>
 
       {/* AUTRES SECTIONS */}
-      <About id="about" />
-      <Project id="project" />
+      <About/>
+      <Project/>
     </>
   );
 }
