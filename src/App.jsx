@@ -1,4 +1,4 @@
-import About from './components/about';
+import About from './components/About';
 import BTS from './components/BTS';
 import pdp from './assets/pdp.png';
 import '@fortawesome/fontawesome-free/css/all.min.css';
