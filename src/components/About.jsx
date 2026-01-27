@@ -3,7 +3,7 @@ function About() {
     <div className="mb-28  text-white flex flex-col lg:flex-row items-start justify-between gap-10">
       {/* Texte à gauche */}
       <div className="lg:w-1/2">
-        <h2 className="text-4xl mb-6 font-bold">À propos</h2>
+        <h2 className="text-4xl mb-6 font-bold text-[#60A5FA]">À propos</h2>
         <p className="mb-10 leading-relaxed text-gray-300">
           Étudiant en BTS SIO option SLAM à l’Efrei, je suis passionné par le développement et les nouvelles technologies.
           Curieux, persévérant et motivé, j’aime apprendre, expérimenter et concevoir des projets concrets.

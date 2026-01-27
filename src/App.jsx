@@ -1,7 +1,8 @@
 import About from './components/about';
-import Project from './components/Project';
+import BTS from './components/BTS';
 import pdp from './assets/pdp.png';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 function App() {
   return (
@@ -40,7 +41,7 @@ function App() {
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">
             Salut, <br />
             Je suis <span className="text-[#60A5FA]">Abdoulaye</span>, <br />
-            <span>étudiant développeur web.</span>
+            <span>étudiant en BTS SIO option-SLAM</span>
           </h1>
 
           {/* ICONES SOCIAUX */}
@@ -73,7 +74,7 @@ function App() {
 
       {/* AUTRES SECTIONS */}
       <About/>
-      <Project/>
+      <BTS/>
     </>
   );
 }
