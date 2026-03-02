@@ -3,6 +3,7 @@ import BTS from "./components/BTS";
 import pdp from "./assets/pdp.png";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Entreprise from "./components/Entreprise";
+import Education from "./components/Education";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <a href="#about" className="hover:text-[#60A5FA] transition">A PROPOS</a>
           <a href="#bts" className="hover:text-[#60A5FA] transition">BTS</a>
           <a href="#entreprise" className="hover:text-[#60A5FA] transition">ENTREPRISE</a>
+          <a href="#education" className="hover:text-[#60A5FA] transition">PARCOURS</a>
         </nav>
 
         <div>
@@ -63,6 +65,11 @@ function App() {
       {/* Entreprise*/}
       <section id="entreprise">
           <Entreprise />
+      </section>
+
+      {/* Entreprise*/}
+      <section id="education">
+          <Education />
       </section>
     </>
   );
