@@ -49,24 +49,27 @@ function Entreprise() {
 
           {/* Info cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
-            {HIGHLIGHTS.map(({ icon: Icon, label, value }, i) => (
-              <MDiv
-                key={label}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + i * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white/[0.03] border border-white/[0.07] hover:border-[#60A5FA]/30 hover:bg-[#60A5FA]/5 rounded-xl p-4 transition-all duration-200"
-              >
-                <div className="w-8 h-8 rounded-lg bg-[#60A5FA]/10 flex items-center justify-center mb-3">
-                  <Icon size={16} className="text-[#60A5FA]" />
-                </div>
-                <p className="text-xs text-gray-500 mb-1 font-medium uppercase tracking-wide">
-                  {label}
-                </p>
-                <p className="text-sm text-white font-medium">{value}</p>
-              </MDiv>
-            ))}
+            {HIGHLIGHTS.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <MDiv
+                  key={item.label}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white/[0.03] border border-white/[0.07] hover:border-[#60A5FA]/30 hover:bg-[#60A5FA]/5 rounded-xl p-4 transition-all duration-200"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-[#60A5FA]/10 flex items-center justify-center mb-3">
+                    <Icon size={16} className="text-[#60A5FA]" />
+                  </div>
+                  <p className="text-xs text-gray-500 mb-1 font-medium uppercase tracking-wide">
+                    {item.label}
+                  </p>
+                  <p className="text-sm text-white font-medium">{item.value}</p>
+                </MDiv>
+              );
+            })}
           </div>
 
           {/* Stats row */}
@@ -194,6 +197,8 @@ function Entreprise() {
   `}
                 <span className="text-gray-500"> {"}"},</span>
                 {`
+
+                
 `}
                 <span className="text-gray-500">{"};"}</span>
               </pre>

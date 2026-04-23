@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+const MDiv = motion.div;
 import {
   ChevronDown,
   Code2,
@@ -58,8 +60,9 @@ function Competency({ text, color = "text-[#60A5FA]" }) {
 }
 
 /* ── Inner accordion ── */
-function InnerAccordion({ title, icon: Icon, children }) {
+function InnerAccordion({ title, icon, children }) {
   const [open, setOpen] = useState(false);
+  const Icon = icon;
   return (
     <div className="rounded-xl overflow-hidden border border-white/[0.06]">
       <button
@@ -70,17 +73,17 @@ function InnerAccordion({ title, icon: Icon, children }) {
           <Icon size={15} className="text-[#60A5FA] shrink-0" />
           <span className="font-semibold text-white text-sm">{title}</span>
         </div>
-        <motion.div
+        <MDiv
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.2 }}
           className="shrink-0"
         >
           <ChevronDown size={15} className="text-gray-500" />
-        </motion.div>
+        </MDiv>
       </button>
       <AnimatePresence initial={false}>
         {open && (
-          <motion.div
+          <MDiv
             key="content"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
@@ -91,7 +94,7 @@ function InnerAccordion({ title, icon: Icon, children }) {
             <div className="px-5 py-4 border-t border-white/[0.05] text-gray-300 text-sm leading-relaxed">
               {children}
             </div>
-          </motion.div>
+          </MDiv>
         )}
       </AnimatePresence>
     </div>
@@ -110,7 +113,7 @@ function EpreuveCard({
 }) {
   const [open, setOpen] = useState(false);
   return (
-    <motion.div
+    <MDiv
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.55, delay }}
@@ -140,19 +143,19 @@ function EpreuveCard({
             </p>
           </div>
         </div>
-        <motion.div
+        <MDiv
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.25 }}
           className="shrink-0 ml-4"
         >
           <ChevronDown size={20} className="text-gray-500" />
-        </motion.div>
+        </MDiv>
       </button>
 
       {/* Body */}
       <AnimatePresence initial={false}>
         {open && (
-          <motion.div
+          <MDiv
             key="body"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
@@ -163,10 +166,10 @@ function EpreuveCard({
             <div className="border-t border-white/[0.06] px-6 py-5 space-y-3">
               {children}
             </div>
-          </motion.div>
+          </MDiv>
         )}
       </AnimatePresence>
-    </motion.div>
+    </MDiv>
   );
 }
 
@@ -255,7 +258,7 @@ function EpreuvesBTS() {
   return (
     <section className="py-24 text-white" aria-labelledby="epreuves-title">
       {/* Header */}
-      <motion.div
+      <MDiv
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -278,7 +281,7 @@ function EpreuvesBTS() {
           réalisations professionnelles et le parcours de compétences acquis
           tout au long de la formation BTS SIO option SLAM.
         </p>
-      </motion.div>
+      </MDiv>
 
       <div className="space-y-5">
         {/* E5 */}

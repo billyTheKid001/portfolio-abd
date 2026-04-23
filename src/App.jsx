@@ -8,8 +8,10 @@ import Education from "./components/Education";
 import Veille from "./components/Veille";
 import Contact from "./components/Contact";
 import EpreuvesBTS from "./components/EpreuvesBTS";
-import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+
+const MDiv = motion.div;
+const MSpan = motion.span;
 
 const NAV_LINKS = [
   { label: "Accueil", href: "#home" },
@@ -91,7 +93,7 @@ function App() {
                 >
                   {label}
                   {isActive && (
-                    <motion.span
+                    <MSpan
                       layoutId="nav-indicator"
                       className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#60A5FA] rounded-full"
                     />
@@ -113,7 +115,9 @@ function App() {
               onClick={() => setMenuOpen((v) => !v)}
               aria-label="Menu"
             >
-              <i className={`fas ${menuOpen ? "fa-times" : "fa-bars"} text-lg`} />
+              <i
+                className={`fas ${menuOpen ? "fa-times" : "fa-bars"} text-lg`}
+              />
             </button>
           </div>
         </div>
@@ -121,7 +125,7 @@ function App() {
         {/* Mobile menu */}
         <AnimatePresence>
           {menuOpen && (
-            <motion.div
+            <MDiv
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
@@ -137,7 +141,7 @@ function App() {
                   {label}
                 </a>
               ))}
-            </motion.div>
+            </MDiv>
           )}
         </AnimatePresence>
       </header>
@@ -148,7 +152,7 @@ function App() {
         className="relative z-10 min-h-screen flex flex-col md:flex-row items-center justify-between gap-12 max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-16"
       >
         {/* Left */}
-        <motion.div
+        <MDiv
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
@@ -214,10 +218,10 @@ function App() {
               <i className="fab fa-linkedin text-lg" />
             </a>
           </div>
-        </motion.div>
+        </MDiv>
 
         {/* Right — photo */}
-        <motion.div
+        <MDiv
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
@@ -233,38 +237,51 @@ function App() {
             />
           </div>
           {/* Floating badge */}
-          <motion.div
+          <MDiv
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
             className="absolute -bottom-4 -left-4 bg-[#0f1e3a] border border-[#60A5FA]/30 rounded-xl px-4 py-2 text-xs font-semibold shadow-lg shadow-blue-900/30 flex items-center gap-2"
           >
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            Disponible en alternance
-          </motion.div>
-        </motion.div>
+            Disponible
+          </MDiv>
+        </MDiv>
       </section>
 
       {/* ── SECTIONS ── */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 space-y-4">
-        <section id="about"><About /></section>
-        <section id="bts"><BTS /></section>
-        <section id="entreprise"><Entreprise /></section>
-        <section id="education"><Education /></section>
-        <section id="epreuves"><EpreuvesBTS /></section>
-        <section id="veille"><Veille /></section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="bts">
+          <BTS />
+        </section>
+        <section id="entreprise">
+          <Entreprise />
+        </section>
+        <section id="education">
+          <Education />
+        </section>
+        <section id="epreuves">
+          <EpreuvesBTS />
+        </section>
+        <section id="veille">
+          <Veille />
+        </section>
       </div>
 
       <div className="relative z-10">
-        <section id="contact"><Contact /></section>
+        <section id="contact">
+          <Contact />
+        </section>
       </div>
 
       {/* ── FOOTER ── */}
       <footer className="relative z-10 border-t border-white/5 py-8 px-6 text-center">
         <p className="text-gray-600 text-sm">
-          © 2025{" "}
-          <span className="text-gray-400 font-medium">Abdoulaye</span> · Développé
-          avec React & Tailwind CSS
+          © 2025 <span className="text-gray-400 font-medium">Abdoulaye</span> ·
+          Développé avec React & Tailwind CSS
         </p>
       </footer>
     </div>
