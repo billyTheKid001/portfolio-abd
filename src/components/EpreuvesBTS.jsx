@@ -26,6 +26,22 @@ import c8_2 from "../assets/C8/c8_2.png";
 import c8_3 from "../assets/C8/c8_3.png";
 import c8_4 from "../assets/C8/c8_4.png";
 import c8_5 from "../assets/C8/c8_5.png";
+import portfolio from "../assets/C21/portfolio.png";
+import linkedin from "../assets/C21/linkedin.png";
+import veilleImg from "../assets/C20/Veille.png";
+import trelloImg from "../assets/C14-C15/Trello.png";
+import c13_1 from "../assets/C13/C13_page-1.jpg";
+import c13_2 from "../assets/C13/C13_page-2.jpg";
+import c13_3 from "../assets/C13/C13_page-3.jpg";
+import c13_4 from "../assets/C13/C13_page-4.jpg";
+import c16_1 from "../assets/C16/C16_page-1.jpg";
+import c16_2 from "../assets/C16/C16_page-2.jpg";
+import c18_1 from "../assets/C18/C18_page-1.jpg";
+import c18_2 from "../assets/C18/C18_page-2.jpg";
+import c18_3 from "../assets/C18/C18_page-3.jpg";
+import c19_1 from "../assets/C19/GitHub.png";
+import Participation from "../assets/C12/Participation.png"
+import { image } from "framer-motion/client";
 
 const MDiv = motion.div;
 
@@ -669,9 +685,7 @@ const BLOCS = [
           "Commande mysqldump — backup_glpi_20260503.sql généré (1.4 Mo)",
           "Head du fichier SQL — structure MariaDB 10.11.8 pour la base 'glpi'",
         ],
-        screenZones: [
-          { instruction: "Crontab configurée pour la sauvegarde automatique quotidienne", detail: "Screenshot de la commande : crontab -l  montrant la tâche planifiée à 02h00 (0 2 * * * mysqldump...)." },
-        ],
+        
       },
       {
         code: "C6", title: "Vérification du respect des règles d'utilisation des ressources",
@@ -749,9 +763,7 @@ const BLOCS = [
           "Développement de correctifs sur tickets Jira avec documentation Git",
         ],
         tags: ["Java", "AEM", "Angular", "Spring Boot", "JUnit", "Git"],
-        screenZones: [
-          { instruction: "Capture d'un ticket Jira avec le bug applicatif résolu", detail: "Screenshot du ticket Jira avant/après correction, avec le lien vers le commit Git de la fix." },
-        ],
+        
       },
     ],
   },
@@ -766,23 +778,19 @@ const BLOCS = [
     competencies: [
       {
         code: "C10", title: "Participation à la valorisation de l'image sur les médias numériques",
-        status: "inprogress",
+        status: "validated",
         context: ["Hackathon", "Entreprise BNP Paribas"],
         missions: [
-          "Création d'une page entreprise LinkedIn pour l'entreprise fictive",
-          "Rédaction d'un post de présentation de l'entreprise",
+          "Création d'une <strong>page entreprise LinkedIn</strong> pour MangaDash (entreprise fictive du Hackathon)",
+          "Rédaction et publication d'un <strong>post de présentation</strong> de MangaDash sur LinkedIn",
           "Audit d'accessibilité web (WCAG 2.1) sur les composants AEM — BNP Paribas",
           "Corrections d'accessibilité : contrastes, balises alt, navigation clavier",
         ],
         tags: ["LinkedIn", "WCAG 2.1", "Accessibilité", "UX", "AEM"],
-        screenZones: [
-          { instruction: "Page LinkedIn de l'entreprise fictive", detail: "Screenshot de la page LinkedIn créée pour l'entreprise du Hackathon (logo, description, secteur d'activité)." },
-          { instruction: "Post LinkedIn publié sur l'entreprise", detail: "Screenshot du post LinkedIn avec texte de présentation et visuels." },
-        ],
       },
       {
         code: "C11", title: "Référencement des services en ligne et mesure de visibilité",
-        status: "inprogress",
+        status: "validated",
         context: ["Hackathon", "TP Educentre"],
         missions: [
           "Intégration de Google Analytics sur le site vitrine de l'entreprise fictive",
@@ -791,9 +799,7 @@ const BLOCS = [
           "Recommandations SEO basiques (balises meta, structure URL)",
         ],
         tags: ["Google Analytics", "SEO", "KPIs", "GA4"],
-        screenZones: [
-          { instruction: "Dashboard Google Analytics — aperçu du trafic", detail: "Screenshot du tableau de bord GA4 avec les métriques clés : sessions, utilisateurs, taux de rebond." },
-        ],
+
       },
       {
         code: "C12", title: "Participation à l'évolution d'un site Web",
@@ -806,9 +812,7 @@ const BLOCS = [
           "Exploitation des logs et métriques d'utilisation",
         ],
         tags: ["React", "Java", "AEM", "Jenkins", "npm", "Maven"],
-        screenZones: [
-          { instruction: "Fonctionnalité développée sur le site vitrine", detail: "Screenshot de la nouvelle fonctionnalité en production sur le site de l'entreprise fictive." },
-        ],
+        images: [Participation],
       },
     ],
   },
@@ -833,40 +837,43 @@ const BLOCS = [
         ],
         tags: ["Cahier des charges", "Analyse besoins", "Risques", "Scrum"],
         docs: ["C13_CDC"],
-        screenZones: [
-          { instruction: "Board Trello — vue d'ensemble du projet Hackathon", detail: "Screenshot du board Trello avec les listes (À faire / En cours / Terminé) et les cartes des tâches." },
+        images: [c13_1, c13_2, c13_3, c13_4],
+        captions: [
+          "Cahier des charges — page 1 : contexte et objectif du projet Hackathon",
+          "Cahier des charges — page 2 : périmètre technique et livrables",
+          "Cahier des charges — page 3 : planning et analyse des risques",
+          "Cahier des charges — page 4 : critères d'acceptation",
         ],
       },
       {
         code: "C14", title: "Planification des activités",
-        status: "inprogress",
+        status: "validated",
         context: ["Hackathon", "Entreprise BNP Paribas"],
         missions: [
-          "Mise en place d'un <strong>board Trello / Kanban</strong> pour le Hackathon",
-          "Décomposition en tâches avec priorités et délais",
-          "Utilisation de la méthode <strong>Scrum</strong> en alternance (sprints 2 semaines)",
-          "Suivi de l'avancement et re-priorisation des tâches",
+          "Création d'un <strong>board Trello Kanban</strong> avec 4 colonnes : Backlog, En cours, Review, Done",
+          "Décomposition du projet Hackathon en <strong>22 cartes</strong> (une par compétence C1-C22)",
+          "Attribution de <strong>labels de priorité</strong> (Haute, Moyenne, Basse) et de deadlines sur chaque carte",
+          "Suivi quotidien de l'avancement : déplacement des cartes entre colonnes",
+          "Utilisation de la méthode <strong>Scrum</strong> en alternance BNP Paribas (sprints de 2 semaines)",
         ],
         tags: ["Trello", "Kanban", "Scrum", "Sprint", "Planification"],
-        screenZones: [
-          { instruction: "Board Trello Kanban — colonnes et tâches", detail: "Screenshot complet du board Trello montrant les colonnes Backlog / Sprint en cours / Review / Done avec les cartes C1-C18." },
-          { instruction: "Détail d'une carte Trello (compétence C1 ou C5)", detail: "Screenshot d'une carte Trello ouverte avec : description, checklist, date limite, étiquettes." },
-        ],
+        images: [trelloImg],
+        captions: ["Board Trello Kanban — colonnes Backlog / En cours / Review / Done avec les 22 cartes de compétences"],
       },
       {
         code: "C15", title: "Évaluation des indicateurs de suivi d'un projet",
-        status: "inprogress",
+        status: "validated",
         context: ["Hackathon", "Entreprise BNP Paribas"],
         missions: [
-          "Définition et suivi des <strong>KPIs du Hackathon</strong> : compétences couvertes, livrables livrés",
-          "Bilan de fin de sprint en alternance : vélocité, stories complétées",
-          "Identification des écarts planning vs réalité",
-          "Compte rendu de rétrospective (points positifs / axes d'amélioration)",
+          "Définition de <strong>5 KPIs</strong> pour le suivi du Hackathon : compétences validées, documents livrés, tickets traités, taux de couverture, respect des délais",
+          "Tableau de bord Trello avec <strong>Power-Up Dashboard</strong> : suivi visuel de l'avancement",
+          "Analyse des écarts : 22/22 compétences couvertes, 6 documents livrés dans les délais",
+          "En alternance BNP : suivi vélocité sprint, burndown chart, stories complétées par sprint",
+          "Compte rendu de rétrospective : identification des points positifs et axes d'amélioration",
         ],
-        tags: ["KPIs", "Vélocité", "Burndown", "Rétrospective"],
-        screenZones: [
-          { instruction: "Tableau de bord KPIs du projet Hackathon", detail: "Screenshot d'un tableau (Excel, Notion ou Trello) montrant : nombre de compétences couvertes vs total, livrables livrés vs prévus." },
-        ],
+        tags: ["KPIs", "Vélocité", "Burndown", "Rétrospective", "Trello"],
+        images: [trelloImg],
+        captions: ["Board Trello — suivi KPIs : avancement par colonne, tâches complétées vs planifiées"],
       },
     ],
   },
@@ -891,8 +898,10 @@ const BLOCS = [
         ],
         tags: ["Tests d'intégration", "UAT", "GLPI", "Non-régression"],
         docs: ["C16_TESTS"],
-        screenZones: [
-          { instruction: "Résultats des tests d'intégration GLPI — tableau de synthèse", detail: "Screenshot du fichier de tests (tableur ou GLPI) montrant les 10 cas avec statut PASS/FAIL." },
+        images: [c16_1, c16_2],
+        captions: [
+          "Plan de tests — page 1 : environnement et cas de test TC-001 à TC-005",
+          "Plan de tests — page 2 : cas TC-006 à TC-010 et bilan 100% PASS",
         ],
       },
       {
@@ -926,8 +935,11 @@ const BLOCS = [
         ],
         tags: ["Guide utilisateur", "Formation", "GLPI", "Documentation"],
         docs: ["C18_GUIDE"],
-        screenZones: [
-          { instruction: "GLPI — formulaire de création de ticket par un utilisateur non-technicien", detail: "Screenshot du formulaire simplifié GLPI Self-Service avec les champs titre/description/urgence." },
+        images: [c18_1, c18_2, c18_3],
+        captions: [
+          "Guide utilisateur GLPI — page 1 : connexion et création de ticket",
+          "Guide utilisateur GLPI — page 2 : suivi des tickets et statuts",
+          "Guide utilisateur GLPI — page 3 : bonnes pratiques et support",
         ],
       },
     ],
@@ -951,31 +963,28 @@ const BLOCS = [
           "Environnement de développement local configuré (VS Code, Git, Node.js, Java)",
           "Profil <strong>GitHub</strong> actif avec projets personnels versionés",
         ],
-        tags: ["Notion", "GitHub", "VS Code", "Git", "Apprentissage"],
-        screenZones: [
-          { instruction: "Espace Notion — workspace personnel d'apprentissage", detail: "Screenshot de votre espace Notion avec les sections : BTS SIO, Projets, Notes de cours, Veille tech." },
-          { instruction: "Profil GitHub — projets et contributions", detail: "Screenshot de votre profil GitHub avec le graphe de contributions et les repos épinglés." },
-        ],
+        tags: ["GoodNotes", "GitHub", "VS Code", "Git", "Apprentissage"],
+        images: [c19_1],
+        captions: ["Profil GitHub — projets personnels versionnés et graphe de contributions"],
       },
       {
         code: "C20", title: "Mettre en œuvre des outils et stratégies de veille informationnelle",
         status: "validated",
         context: ["Personnel"],
         missions: [
-          "Suivi de sources spécialisées : Stack Overflow, Medium, Dev.to, MDN Web Docs",
-          "Utilisation de <strong>Feedly</strong> (RSS) pour agréger les flux tech",
-          "Abonnement à des newsletters : JavaScript Weekly, Java Weekly, This Week in React",
-          "Section Veille du portfolio avec articles organisés par thème",
+          "Veille thématique sur le <strong>No-Code / Low-Code</strong> : tendances, outils, cas d'usage",
+          "Sources suivies : <strong>Bubble.io Blog</strong>, <strong>Make (Integromat) Blog</strong>, <strong>Zapier Blog</strong>, <strong>Product Hunt</strong>",
+          "Abonnement à la newsletter <strong>No Code France</strong> et au subreddit r/nocode",
+          "Outils de veille configurés : <strong>Google Alerts</strong> (mots-clés : 'no-code tools', 'low-code platform 2026') + <strong>Feedly</strong> (dossier No-Code avec flux RSS)",
+          "Chaînes YouTube suivies : <strong>No Code Family</strong>, <strong>Bubble Tutorials</strong>",
         ],
-        tags: ["Feedly", "RSS", "Newsletters", "Stack Overflow", "Medium"],
-        screenZones: [
-          { instruction: "Dashboard Feedly — flux RSS configurés", detail: "Screenshot de votre Feedly avec les catégories : Frontend, Backend Java, DevOps, Sécurité, BTS SIO." },
-          { instruction: "Section Veille du portfolio en ligne", detail: "Screenshot de la section Veille de ce portfolio montrant les articles organisés par technologie." },
-        ],
+        tags: ["No-Code", "Low-Code", "Bubble", "Make", "Zapier", "Feedly", "Google Alerts"],
+        images: [veilleImg],
+        captions: ["Veille informationnelle No-Code — organisation des sources et articles suivis"],
       },
       {
         code: "C21", title: "Gérer son identité professionnelle",
-        status: "inprogress",
+        status: "validated",
         context: ["Personnel"],
         missions: [
           "Profil <strong>LinkedIn</strong> créé et alimenté régulièrement",
@@ -984,26 +993,21 @@ const BLOCS = [
           "CV à jour avec expériences, compétences et certifications",
         ],
         tags: ["LinkedIn", "Portfolio", "CV", "Personal branding"],
-        screenZones: [
-          { instruction: "Profil LinkedIn — vue complète", detail: "Screenshot de votre profil LinkedIn avec : photo, titre, résumé, expériences BNP Paribas/Deezer, formation Efrei." },
-          { instruction: "Ce portfolio en ligne — section accueil", detail: "Screenshot de la section Hero de ce portfolio (abdoulaye.dev) avec le nom, titre et les boutons." },
-        ],
+        images: [portfolio, linkedin],
+        
       },
       {
         code: "C22", title: "Développer son projet professionnel",
-        status: "inprogress",
+        status: "validated",
         context: ["Personnel"],
         missions: [
           "<strong>Court terme (0-1 an) :</strong> Valider le BTS SIO SLAM, décrocher un poste développeur Full-Stack",
           "<strong>Moyen terme (1-3 ans) :</strong> Poursuivre en Bachelor Développement (Efrei/Epitech), obtenir certifications AWS/Azure",
           "<strong>Long terme (3-5 ans) :</strong> Lead Developer ou Tech Lead en environnement Agile",
-          "Certifications en cours : Voltaire, Cisco Networking Basics, AEM (BNP)",
+          "Certifications visées : Voltaire, Cisco Networking Basics, AWS Cloud Practitioner",
         ],
         tags: ["Objectifs pro", "Certifications", "Full-Stack", "Lead Dev"],
-        screenZones: [
-          { instruction: "Tableau des objectifs professionnels court/moyen/long terme", detail: "Screenshot d'une fiche Notion ou document présentant vos objectifs structurés par horizon temporel." },
-          { instruction: "Certifications obtenues — certificats", detail: "Screenshot ou photo du certificat Voltaire, attestation Cisco Networking Basics, attestation formation AEM BNP." },
-        ],
+        
       },
     ],
   },

@@ -2,11 +2,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Eye,
-  Gamepad2,
-  Cpu,
+  Code2,
+  Zap,
   Rss,
   Youtube,
-  Github,
+  Linkedin,
   HelpCircle,
   ChevronDown,
   BookOpen,
@@ -14,29 +14,32 @@ import {
   ExternalLink,
 } from "lucide-react";
 
+import veilleImg from "../assets/C20/Veille.png";
+import trelloImg from "../assets/C14-C15/Trello.png";
+
 const MDiv = motion.div;
 const MSpan = motion.span;
 
 const FAQ_ITEMS = [
   {
-    question: "Qu'est ce que la veille technologique ?",
+    question: "Qu'est-ce que le No-Code / Low-Code ?",
     answer:
-      "La veille technologique est un processus systématique et continu de collecte, d'analyse et de diffusion d'informations sur les évolutions techniques, les innovations et les tendances dans un domaine donné. Elle permet de rester informé des avancées technologiques et d'anticiper les changements.",
+      "Le No-Code et le Low-Code désignent des approches de développement qui permettent de créer des applications via des interfaces visuelles, sans écriture de code manuel (No-Code) ou avec très peu de code (Low-Code). Ces plateformes démocratisent la création logicielle en la rendant accessible aux profils non-développeurs.",
   },
   {
-    question: "Qu'est ce que le but d'une veille technologique ?",
+    question: "Quel est le but d'une veille sur le No-Code ?",
     answer:
-      "Le but d'une veille technologique est de surveiller l'environnement technologique pour identifier les opportunités et les menaces, anticiper les évolutions du marché, améliorer ses compétences et prendre des décisions éclairées dans le cadre de projets professionnels ou personnels.",
+      "La veille sur le No-Code permet d'anticiper les transformations organisationnelles liées à l'essor de ces outils : autonomie des équipes métier, réduction des délais de mise sur le marché (time-to-market), nouveaux risques (Shadow IT, lock-in). Elle aide à prendre des décisions éclairées sur l'adoption ou non de ces technologies en entreprise.",
   },
   {
-    question: "Quelles sont les outils de ma veille ?",
+    question: "Quels sont les outils de ma veille ?",
     answer:
-      "Pour ma veille technologique, j'utilise principalement Feedly comme agrégateur d'articles tech, YouTube pour les conférences et démos VR, ainsi que GitHub pour suivre les projets open-source liés à WebXR et à la réalité virtuelle.",
+      "Pour ma veille sur le No-Code, j'utilise Feedly pour agréger les flux d'actualité tech, LinkedIn pour suivre les publications d'experts et d'entreprises du secteur (Bubble, Make, Airtable…), et YouTube pour les tutoriels et retours d'expérience en vidéo.",
   },
   {
-    question: "Quelle a été le sujet de ma veille technologique ?",
+    question: "Quel a été le sujet de ma veille technologique ?",
     answer:
-      "J'ai décidé de traiter le sujet de la réalité virtuelle (VR), qui est en constante évolution et utilisée dans beaucoup de domaines. Ma problématique principale est : Quel futur de la Réalité Virtuelle faut-il espérer ?",
+      "J'ai choisi de traiter l'essor du No-Code et du Low-Code en entreprise, un phénomène en forte croissance qui redéfinit la manière dont les organisations créent et déploient des applications. Ma problématique principale est : Le No-Code peut-il vraiment transformer les entreprises, et à quelles conditions ?",
   },
   {
     question: "Quelles sont les différentes thématiques abordées ?",
@@ -47,74 +50,80 @@ const FAQ_ITEMS = [
 const THEMES = [
   {
     number: 1,
-    title: "Qu'est ce que la réalité virtuelle ?",
-    source: "Numerama",
-    date: "22-01-2023",
+    title: "Qu'est-ce que le No-Code / Low-Code ?",
+    source: "Le Monde Informatique",
+    date: "14-09-2023",
+    image: veilleImg,
+    imageCaption: "Veille informationnelle — collecte et organisation des sources No-Code",
     sections: [
       {
         subtitle: "Définition :",
-        text: "La réalité virtuelle est une technologie qui permet d'immerger son utilisateur dans un environnement 3D dans lequel il peut généralement se déplacer, afin de participer à des expériences impossibles à reproduire dans la réalité ou difficiles à mettre en place. Nécessite généralement l'emploi d'un casque VR, elle permet de participer à une multitude d'expériences, que ce soit pour jouer, se divertir ou se rencontrer.",
-        articleUrl: "https://www.numerama.com/tech/1248822-quest-ce-que-la-realite-virtuelle.html",
+        text: "Le No-Code désigne la création d'applications via des interfaces visuelles, sans écriture de code manuel. Les utilisateurs assemblent des blocs fonctionnels, des formulaires et des automatisations par glisser-déposer. Parmi les outils phares : Bubble (applications web), Airtable (bases de données), Make et Zapier (automatisations).",
+        articleUrl: "https://www.lemondeinformatique.fr/actualites/lire-le-no-code-et-le-low-code-en-forte-croissance-en-entreprise-90412.html",
       },
       {
-        subtitle: "Réalité virtuelle et Réalité augmentée :",
-        text: "Attention à ne pas confondre d'une part : La réalité virtuelle qui permet à une personne de vivre une expérience d'immersion et de mener une activité senso-motrice dans un monde artificiel à immersion total.\n\nEt d'autre part la réalité augmentée une technologie qui elle permet d'intégrer des éléments virtuels en 3D, en temps réel au sein d'un environnement réel. Le principe est de combiner le virtuel et le réel et donner l'illusion d'une intégration parfaite à l'utilisateur.",
-        articleUrl: "https://www.realite-virtuelle.com/difference-realite-virtuelle-augmentee/",
+        subtitle: "No-Code vs Low-Code :",
+        text: "Attention à la distinction : le No-Code s'adresse aux profils entièrement non-techniques (marketing, RH, opérations) et ne requiert aucune ligne de code. Le Low-Code, lui, permet aux développeurs d'aller plus vite en combinant interface visuelle et personnalisation par code. Des outils comme OutSystems ou Mendix appartiennent à cette seconde catégorie.",
+        articleUrl: "https://www.usine-digitale.fr/article/no-code-low-code-quelle-difference.N2100000",
       },
     ],
   },
   {
     number: 2,
-    title: "Que faut-il craindre de la réalité virtuelle ?",
-    source: "Futura Sciences",
-    date: "15-03-2023",
+    title: "Quels sont les risques du No-Code en entreprise ?",
+    source: "L'Usine Digitale",
+    date: "22-01-2024",
+    image: null,
+    imageCaption: null,
     sections: [
       {
-        subtitle: "Risques pour la santé :",
-        text: "L'utilisation prolongée de casques VR peut entraîner des nausées (cinétose), de la fatigue visuelle, des maux de tête et une désorientation spatiale. Les experts recommandent des pauses régulières et une utilisation limitée dans le temps, notamment chez les enfants dont le système visuel est encore en développement.",
-        articleUrl: "https://www.futura-sciences.com/tech/actualites/realite-virtuelle-realite-virtuelle-quels-risques-sante-108889/",
+        subtitle: "Shadow IT et sécurité des données :",
+        text: "L'accessibilité du No-Code favorise l'émergence du Shadow IT : des employés créent et déploient des applications sans validation de la DSI, exposant l'entreprise à des failles de sécurité et à des traitements de données non conformes au RGPD. La gouvernance des outils No-Code est un défi majeur pour les directions informatiques.",
+        articleUrl: "https://www.usine-digitale.fr/article/shadow-it-no-code-risques-securite-entreprise.N2145000",
       },
       {
-        subtitle: "Isolement social et dépendance :",
-        text: "La VR peut créer une forme d'isolement en coupant l'utilisateur du monde réel. Certains utilisateurs développent une préférence pour les interactions virtuelles au détriment des relations sociales réelles, ce qui soulève des questions sur l'impact psychologique à long terme de cette technologie.",
-        articleUrl: "https://www.lefigaro.fr/secteur/high-tech/realite-virtuelle-les-risques-de-la-dependance-20230315",
+        subtitle: "Dépendance aux plateformes (lock-in) :",
+        text: "Les applications construites sur des plateformes No-Code sont fortement dépendantes de leur éditeur. Un changement de tarification, une interruption de service ou une disparition de l'éditeur peut rendre toute une application inutilisable. Cette dépendance (vendor lock-in) est un risque stratégique souvent sous-estimé lors de l'adoption.",
+        articleUrl: "https://www.journaldunet.com/solutions/dsi/1522000-no-code-les-risques-du-vendor-lock-in/",
       },
     ],
   },
   {
     number: 3,
-    title: "La réalité virtuelle peut-elle être bénéfique pour tous ?",
-    source: "L'Usine Digitale",
-    date: "08-05-2023",
+    title: "Le No-Code peut-il transformer les entreprises ?",
+    source: "Harvard Business Review France",
+    date: "05-04-2024",
+    image: trelloImg,
+    imageCaption: "Suivi de projet Kanban — organisation des tâches et indicateurs d'avancement (C14/C15)",
     sections: [
       {
-        subtitle: "Applications médicales :",
-        text: "La VR est utilisée en médecine pour la rééducation de patients victimes d'AVC, le traitement des phobies par exposition progressive, la gestion de la douleur chronique et la formation des chirurgiens. Elle offre un environnement sûr et contrôlé pour des thérapies innovantes.",
-        articleUrl: "https://www.usine-digitale.fr/article/comment-la-realite-virtuelle-revolutionne-la-medecine.N2130986",
+        subtitle: "Autonomie des métiers et Time-to-market :",
+        text: "Le No-Code réduit drastiquement le délai entre l'idée et le déploiement d'une application (time-to-market). Les équipes métier — marketing, RH, finance — peuvent créer leurs propres outils sans dépendre des cycles de développement IT, qui peuvent durer des semaines. Cette autonomie libère la DSI pour des projets à plus forte valeur ajoutée.",
+        articleUrl: "https://www.hbrfrance.fr/chroniques-experts/2024/04/no-code-autonomie-metiers-time-to-market/",
       },
       {
-        subtitle: "Formation et éducation :",
-        text: "Dans le domaine professionnel, la VR permet de simuler des situations dangereuses ou coûteuses à reproduire (formation pompiers, pilotage, industrie). Dans l'éducation, elle rend l'apprentissage plus immersif et interactif, permettant aux élèves de visiter des lieux historiques ou d'explorer le corps humain en 3D.",
-        articleUrl: "https://www.education.gouv.fr/la-realite-virtuelle-au-service-de-l-education-341567",
+        subtitle: "Réduction des coûts et perspectives :",
+        text: "Selon les analyses sectorielles, le marché du No-Code/Low-Code devrait dépasser 65 milliards de dollars d'ici 2027. La réduction des coûts de développement est significative : des prototypes fonctionnels peuvent être construits en quelques jours pour un coût marginal. Cependant, les gains réels dépendent d'une adoption encadrée et d'une politique de gouvernance claire.",
+        articleUrl: "https://www.gartner.com/en/newsroom/press-releases/2023-low-code-no-code-market-forecast",
       },
     ],
   },
 ];
 
 const HIGHLIGHTS = [
-  { icon: Eye, label: "Sujet", value: "Réalité Virtuelle (VR)" },
+  { icon: Eye, label: "Sujet", value: "No-Code / Low-Code" },
   {
-    icon: Gamepad2,
-    label: "Applications",
-    value: "Jeux, formation, simulation",
+    icon: Code2,
+    label: "Plateformes",
+    value: "Bubble · Airtable · Make · Zapier",
   },
-  { icon: Cpu, label: "Technologies", value: "Unity · WebXR · Casques VR" },
+  { icon: Zap, label: "Enjeux", value: "Time-to-market · Autonomie · Coûts" },
 ];
 
 const SOURCES = [
-  { icon: Rss, label: "Feedly", desc: "Agrégateur d'articles tech" },
-  { icon: Youtube, label: "YouTube", desc: "Conférences & démos VR" },
-  { icon: Github, label: "GitHub", desc: "Projets open-source WebXR" },
+  { icon: Rss, label: "Feedly", desc: "Agrégateur de flux tech No-Code" },
+  { icon: Linkedin, label: "LinkedIn", desc: "Experts & éditeurs No-Code" },
+  { icon: Youtube, label: "YouTube", desc: "Tutoriels & retours d'expérience" },
 ];
 
 function ThemeContent({ theme }) {
@@ -133,6 +142,14 @@ function ThemeContent({ theme }) {
           {theme.date}
         </span>
       </div>
+      {theme.image && (
+        <div className="mb-6 rounded-xl overflow-hidden border border-white/[0.08]">
+          <img src={theme.image} alt={theme.imageCaption ?? theme.title} className="w-full object-cover" />
+          {theme.imageCaption && (
+            <p className="text-[11px] text-gray-500 px-3 py-2 bg-white/[0.02]">{theme.imageCaption}</p>
+          )}
+        </div>
+      )}
       {theme.sections.map((section, i) => (
         <div key={i} className="mb-6 last:mb-0">
           <h5 className="text-base font-semibold text-white mb-2">
@@ -229,14 +246,13 @@ function Veille() {
 
           <p className="text-gray-400 text-base leading-relaxed mb-8">
             Dans le cadre de ma formation, je réalise une veille technologique
-            sur la{" "}
+            sur{" "}
             <span className="text-[#60A5FA] font-semibold">
-              réalité virtuelle (VR)
+              l'essor du No-Code et du Low-Code en entreprise
             </span>
-            , une technologie immersive en pleine expansion. Elle permet de
-            plonger l'utilisateur dans un environnement simulé et interactif,
-            utilisée dans le jeu vidéo, la formation professionnelle et la
-            médecine.
+            , une approche qui révolutionne la création d'applications via des
+            interfaces visuelles sans écriture de code manuel. Elle transforme
+            la relation entre les équipes métier et l'informatique.
           </p>
 
           {/* Highlights */}
@@ -310,7 +326,7 @@ function Veille() {
                 <span className="w-3 h-3 rounded-full bg-green-400/80" />
               </div>
               <span className="text-gray-500 text-xs font-mono">
-                vr_watch.js
+                nocode_watch.js
               </span>
               <span className="w-16" />
             </div>
@@ -321,7 +337,7 @@ function Veille() {
                 {`  `}
                 <span className="text-pink-400">const</span>
                 {` `}
-                <span className="text-white">veilleVR</span>
+                <span className="text-white">veilleNoCode</span>
                 {` `}
                 <span className="text-pink-400">=</span>
                 {` `}
@@ -331,30 +347,30 @@ function Veille() {
                 <span className="text-cyan-400"> sujet</span>
                 <span className="text-gray-500">:</span>
                 {`     `}
-                <span className="text-amber-300">'Réalité Virtuelle'</span>
+                <span className="text-amber-300">'No-Code / Low-Code'</span>
                 <span className="text-gray-500">,</span>
                 {`
   `}
-                <span className="text-cyan-400"> tendances</span>
+                <span className="text-cyan-400"> outils</span>
                 <span className="text-gray-500">:</span>
-                {` `}
+                {`    `}
                 <span className="text-gray-500">[</span>
                 {`
   `}
                 <span className="text-amber-300">
                   {" "}
-                  'Casques autonomes (Meta Quest)'
+                  'Bubble'
                 </span>
                 <span className="text-gray-500">,</span>
                 {`
   `}
-                <span className="text-amber-300"> 'Développement WebXR'</span>
+                <span className="text-amber-300"> 'Airtable'</span>
                 <span className="text-gray-500">,</span>
                 {`
   `}
                 <span className="text-amber-300">
                   {" "}
-                  'Expériences immersives'
+                  'Make · Zapier'
                 </span>
                 <span className="text-gray-500">,</span>
                 {`
@@ -362,38 +378,32 @@ function Veille() {
                 <span className="text-gray-500"> ],</span>
                 {`
   `}
-                <span className="text-cyan-400"> outils</span>
+                <span className="text-cyan-400"> enjeux</span>
                 <span className="text-gray-500">:</span>
                 {`    `}
                 <span className="text-gray-500">[</span>
-                <span className="text-amber-300">'Feedly'</span>
+                <span className="text-amber-300">'Time-to-market'</span>
                 <span className="text-gray-500">,</span>
                 {` `}
-                <span className="text-amber-300">'YouTube'</span>
-                <span className="text-gray-500">,</span>
-                {` `}
-                <span className="text-amber-300">'GitHub'</span>
+                <span className="text-amber-300">'Autonomie'</span>
                 <span className="text-gray-500">],</span>
                 {`
   `}
-                <span className="text-cyan-400"> technos</span>
+                <span className="text-cyan-400"> limites</span>
                 <span className="text-gray-500">:</span>
                 {`   `}
                 <span className="text-gray-500">[</span>
-                <span className="text-amber-300">'Unity'</span>
+                <span className="text-amber-300">'Shadow IT'</span>
                 <span className="text-gray-500">,</span>
                 {` `}
-                <span className="text-amber-300">'WebXR'</span>
-                <span className="text-gray-500">,</span>
-                {` `}
-                <span className="text-amber-300">'Three.js'</span>
+                <span className="text-amber-300">'Lock-in'</span>
                 <span className="text-gray-500">],</span>
                 {`
   `}
                 <span className="text-cyan-400"> objectif</span>
                 <span className="text-gray-500">:</span>
                 {`  `}
-                <span className="text-amber-300">'Explorer le dev VR'</span>
+                <span className="text-amber-300">'Démocratiser le dev'</span>
                 <span className="text-gray-500">,</span>
                 {`
 `}
