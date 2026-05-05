@@ -8,6 +8,7 @@ import Education from "./components/Education";
 import Veille from "./components/Veille";
 import Contact from "./components/Contact";
 import EpreuvesBTS from "./components/EpreuvesBTS";
+import Projets from "./components/Projets";
 import { motion, AnimatePresence } from "framer-motion";
 
 const MDiv = motion.div;
@@ -20,6 +21,7 @@ const NAV_LINKS = [
   { label: "Entreprise", href: "#entreprise" },
   { label: "Parcours", href: "#education" },
   { label: "E5 / E6", href: "#epreuves" },
+  { label: "Projets", href: "#projets" },
   { label: "Veille", href: "#veille" },
   { label: "Contact", href: "#contact" },
 ];
@@ -265,6 +267,9 @@ function App() {
         </section>
         <section id="epreuves">
           <EpreuvesBTS />
+        </section>
+        <section id="projets">
+          <Projets />
         </section>
         <section id="veille">
           <Veille />

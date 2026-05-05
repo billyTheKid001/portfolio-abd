@@ -40,8 +40,17 @@ import c18_1 from "../assets/C18/C18_page-1.jpg";
 import c18_2 from "../assets/C18/C18_page-2.jpg";
 import c18_3 from "../assets/C18/C18_page-3.jpg";
 import c19_1 from "../assets/C19/GitHub.png";
-import Participation from "../assets/C12/Participation.png"
-import { image } from "framer-motion/client";
+import Participation from "../assets/C12/Participation.png";
+import c2_1 from "../assets/C2/C2_page-1.jpg";
+import c2_2 from "../assets/C2/C2_page-2.jpg";
+import c2_3 from "../assets/C2/C2_page-3.jpg";
+import c2_4 from "../assets/C2/C2_page-4.jpg";
+import c4_1 from "../assets/C4/C4_page-1.jpg";
+import c4_2 from "../assets/C4/C4_page-2.jpg";
+import c4_3 from "../assets/C4/C4_page-3.jpg";
+import c6_1 from "../assets/C6/C6_page-1.jpg";
+import c6_2 from "../assets/C6/C6_page-2.jpg";
+import c6_3 from "../assets/C6/C6_page-3.jpg";
 
 const MDiv = motion.div;
 
@@ -631,8 +640,12 @@ const BLOCS = [
         ],
         tags: ["ITIL v4", "ISO 9001:2015", "SLA", "KPIs", "SMQ"],
         docs: ["C2_ITIL", "C2_ISO"],
-        screenZones: [
-          { instruction: "GLPI > Base de connaissances > Procédure ITIL", detail: "Screenshot de la procédure PROC-INC-001 enregistrée dans la base de connaissances GLPI." },
+        images: [c2_1, c2_2, c2_3, c2_4],
+        captions: [
+          "Référentiels — page 1 : présentation ITIL v4 et gestion des incidents",
+          "Référentiels — page 2 : procédure ITIL et matrice de priorité SLA",
+          "Référentiels — page 3 : norme ISO 9001:2015 et politique qualité",
+          "Référentiels — page 4 : KPIs qualité et roue de Deming (PDCA)",
         ],
       },
       {
@@ -665,8 +678,11 @@ const BLOCS = [
         ],
         tags: ["PRA", "PCA", "RTO", "RPO", "Continuité"],
         docs: ["C4_PRA", "C4_PCA"],
-        screenZones: [
-          { instruction: "Terminal — test de restauration de la sauvegarde", detail: "Screen après la commande : mysql -u root -p glpi < backup_glpi_20260503.sql  + vérification de l'accès GLPI." },
+        images: [c4_1, c4_2, c4_3],
+        captions: [
+          "PRA/PCA — page 1 : périmètre et services critiques avec RTO/RPO",
+          "PRA/PCA — page 2 : procédures de reprise et scénarios de sinistre",
+          "PRA/PCA — page 3 : plan de sauvegarde et tests de continuité",
         ],
       },
       {
@@ -699,8 +715,11 @@ const BLOCS = [
         ],
         tags: ["Charte informatique", "RGPD", "Sécurité", "Conformité"],
         docs: ["C6_CHARTE"],
-        screenZones: [
-          { instruction: "Charte informatique signée par un utilisateur fictif", detail: "Photo ou scan de la charte signée. Alternative : capture d'un formulaire de signature électronique." },
+        images: [c6_1, c6_2, c6_3],
+        captions: [
+          "Charte informatique — page 1 : préambule et règles d'utilisation des équipements",
+          "Charte informatique — page 2 : accès, mots de passe, internet et RGPD",
+          "Charte informatique — page 3 : signalement des incidents et sanctions",
         ],
       },
     ],
@@ -1178,6 +1197,30 @@ export default function EpreuvesBTS() {
           </MDiv>
         ))}
       </div>
+
+      {/* ── TÉLÉCHARGEMENT TABLEAU DE SYNTHÈSE ── */}
+      <MDiv
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="mt-10 flex justify-center"
+      >
+        <a
+          href="/Tableau_Abdoulaye_Corrige.xlsx"
+          download
+          className="group inline-flex items-center gap-3 px-6 py-4 rounded-2xl border border-[#60A5FA]/30 bg-[#60A5FA]/5 hover:bg-[#60A5FA]/10 hover:border-[#60A5FA]/50 transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-blue-900/10"
+        >
+          <div className="w-9 h-9 rounded-xl bg-[#60A5FA]/15 border border-[#60A5FA]/25 flex items-center justify-center shrink-0">
+            <FileText size={16} className="text-[#60A5FA]" />
+          </div>
+          <div className="text-left">
+            <p className="text-white font-semibold text-sm">Télécharger mon tableau de synthèse</p>
+            <p className="text-gray-500 text-xs mt-0.5">Tableau de compétences BTS SIO · .xlsx</p>
+          </div>
+          <ExternalLink size={14} className="text-[#60A5FA]/60 group-hover:text-[#60A5FA] transition-colors ml-1" />
+        </a>
+      </MDiv>
     </section>
   );
 }
