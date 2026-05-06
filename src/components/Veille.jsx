@@ -24,12 +24,12 @@ const FAQ_ITEMS = [
   {
     question: "Qu'est-ce que le No-Code / Low-Code ?",
     answer:
-      "Le No-Code et le Low-Code désignent des approches de développement qui permettent de créer des applications via des interfaces visuelles, sans écriture de code manuel (No-Code) ou avec très peu de code (Low-Code). Ces plateformes démocratisent la création logicielle en la rendant accessible aux profils non-développeurs.",
+      "Le No-Code désigne une approche logicielle permettant de concevoir des applications via des interfaces visuelles et du glisser-déposer, sans écrire de code. Le Low-Code en est une variante qui autorise quelques lignes de personnalisation. Ces plateformes démocratisent le développement en le rendant accessible aux profils non-techniques, qu'on appelle les Citizen Developers.",
   },
   {
     question: "Quel est le but d'une veille sur le No-Code ?",
     answer:
-      "La veille sur le No-Code permet d'anticiper les transformations organisationnelles liées à l'essor de ces outils : autonomie des équipes métier, réduction des délais de mise sur le marché (time-to-market), nouveaux risques (Shadow IT, lock-in). Elle aide à prendre des décisions éclairées sur l'adoption ou non de ces technologies en entreprise.",
+      "Anticiper les transformations liées à l'essor de ces outils : autonomisation des équipes métier (Citizen Developers), réduction du Time-to-Market, maîtrise des risques (Shadow IT, Vendor Lock-in, RGPD). L'objectif est de prendre des décisions éclairées sur l'adoption du No-Code en entreprise.",
   },
   {
     question: "Quels sont les outils de ma veille ?",
@@ -39,10 +39,10 @@ const FAQ_ITEMS = [
   {
     question: "Quel a été le sujet de ma veille technologique ?",
     answer:
-      "J'ai choisi de traiter l'essor du No-Code et du Low-Code en entreprise, un phénomène en forte croissance qui redéfinit la manière dont les organisations créent et déploient des applications. Ma problématique principale est : Le No-Code peut-il vraiment transformer les entreprises, et à quelles conditions ?",
+      "J'ai choisi de traiter l'essor du No-Code et du Low-Code en entreprise, un phénomène en forte croissance qui redéfinit la façon dont les organisations conçoivent et déploient leurs applications. Ma problématique : le No-Code peut-il réellement transformer les entreprises, et à quelles conditions ?",
   },
   {
-    question: "Quelles sont les différentes thématiques abordées ?",
+    question: "Quelles sont les thématiques abordées ?",
     answer: null, // Rich content rendered separately
   },
 ];
@@ -51,60 +51,60 @@ const THEMES = [
   {
     number: 1,
     title: "Qu'est-ce que le No-Code / Low-Code ?",
-    source: "Le Monde Informatique",
-    date: "14-09-2023",
+    source: "Journal du Net",
+    date: "2024",
     image: veilleImg,
     imageCaption: "Veille informationnelle — collecte et organisation des sources No-Code",
     sections: [
       {
         subtitle: "Définition :",
-        text: "Le No-Code désigne la création d'applications via des interfaces visuelles, sans écriture de code manuel. Les utilisateurs assemblent des blocs fonctionnels, des formulaires et des automatisations par glisser-déposer. Parmi les outils phares : Bubble (applications web), Airtable (bases de données), Make et Zapier (automatisations).",
-        articleUrl: "https://www.lemondeinformatique.fr/actualites/lire-le-no-code-et-le-low-code-en-forte-croissance-en-entreprise-90412.html",
+        text: "Le No-Code est une approche logicielle permettant de concevoir des applications via des interfaces visuelles et du glisser-déposer, sans écrire de code. Les utilisateurs assemblent des blocs fonctionnels, formulaires et automatisations. Outils phares : Bubble (web), Airtable (bases de données), Make et Zapier (automatisations).",
+        articleUrl: "https://www.journaldunet.com/developpeur/1518277-tour-d-horizon-du-low-code-et-du-no-code/",
       },
       {
         subtitle: "No-Code vs Low-Code :",
-        text: "Attention à la distinction : le No-Code s'adresse aux profils entièrement non-techniques (marketing, RH, opérations) et ne requiert aucune ligne de code. Le Low-Code, lui, permet aux développeurs d'aller plus vite en combinant interface visuelle et personnalisation par code. Des outils comme OutSystems ou Mendix appartiennent à cette seconde catégorie.",
-        articleUrl: "https://www.usine-digitale.fr/article/no-code-low-code-quelle-difference.N2100000",
+        text: "Le No-Code cible les profils non-techniques — on parle de Citizen Developers — et ne requiert aucune ligne de code. Le Low-Code s'adresse aux développeurs souhaitant accélérer leur production en combinant interface visuelle et personnalisation par code (ex : OutSystems, Mendix). Les deux approches visent à réduire le Time-to-Market.",
+        articleUrl: "https://www.lemagit.fr/conseil/Ne-comparez-plus-low-code-et-no-code-selon-le-profil-des-developpeurs",
       },
     ],
   },
   {
     number: 2,
     title: "Quels sont les risques du No-Code en entreprise ?",
-    source: "L'Usine Digitale",
-    date: "22-01-2024",
+    source: "LeMagIT / Journal du Net",
+    date: "2024",
     image: null,
     imageCaption: null,
     sections: [
       {
         subtitle: "Shadow IT et sécurité des données :",
-        text: "L'accessibilité du No-Code favorise l'émergence du Shadow IT : des employés créent et déploient des applications sans validation de la DSI, exposant l'entreprise à des failles de sécurité et à des traitements de données non conformes au RGPD. La gouvernance des outils No-Code est un défi majeur pour les directions informatiques.",
-        articleUrl: "https://www.usine-digitale.fr/article/shadow-it-no-code-risques-securite-entreprise.N2145000",
+        text: "L'accessibilité du No-Code favorise le Shadow IT : des employés créent des applications hors du contrôle de la DSI, exposant l'entreprise à des failles de sécurité et à des traitements de données non conformes au RGPD. La gouvernance de ces outils est donc un enjeu stratégique pour toute direction informatique.",
+        articleUrl: "https://www.lemagit.fr/conseil/Securite-reduire-les-risques-lies-aux-plateformes-low-code-et-no-code",
       },
       {
         subtitle: "Dépendance aux plateformes (lock-in) :",
-        text: "Les applications construites sur des plateformes No-Code sont fortement dépendantes de leur éditeur. Un changement de tarification, une interruption de service ou une disparition de l'éditeur peut rendre toute une application inutilisable. Cette dépendance (vendor lock-in) est un risque stratégique souvent sous-estimé lors de l'adoption.",
-        articleUrl: "https://www.journaldunet.com/solutions/dsi/1522000-no-code-les-risques-du-vendor-lock-in/",
+        text: "Les applications No-Code sont étroitement liées à leur éditeur : un changement de tarification, une interruption de service ou une fermeture de la plateforme peut bloquer toute l'activité. Ce Vendor Lock-in, combiné aux enjeux de souveraineté des données, est un risque stratégique souvent sous-estimé lors de l'adoption.",
+        articleUrl: "https://www.journaldunet.com/developpeur/1515547-le-no-code-a-un-probleme-et-personne-n-en-parle/",
       },
     ],
   },
   {
     number: 3,
     title: "Le No-Code peut-il transformer les entreprises ?",
-    source: "Harvard Business Review France",
-    date: "05-04-2024",
+    source: "Archimag / Journal du Net",
+    date: "2024–2025",
     image: trelloImg,
     imageCaption: "Suivi de projet Kanban — organisation des tâches et indicateurs d'avancement (C14/C15)",
     sections: [
       {
         subtitle: "Autonomie des métiers et Time-to-market :",
-        text: "Le No-Code réduit drastiquement le délai entre l'idée et le déploiement d'une application (time-to-market). Les équipes métier — marketing, RH, finance — peuvent créer leurs propres outils sans dépendre des cycles de développement IT, qui peuvent durer des semaines. Cette autonomie libère la DSI pour des projets à plus forte valeur ajoutée.",
-        articleUrl: "https://www.hbrfrance.fr/chroniques-experts/2024/04/no-code-autonomie-metiers-time-to-market/",
+        text: "Le No-Code réduit drastiquement le Time-to-Market : une équipe métier peut créer et déployer un outil ou un MVP en quelques jours, sans dépendre des cycles IT. Cette autonomisation — portée par les Citizen Developers — libère la DSI pour se concentrer sur des projets à plus forte valeur ajoutée.",
+        articleUrl: "https://www.archimag.com/travail-collaboratif/2024/04/25/citizen-developement-service-intelligence-collective",
       },
       {
         subtitle: "Réduction des coûts et perspectives :",
-        text: "Selon les analyses sectorielles, le marché du No-Code/Low-Code devrait dépasser 65 milliards de dollars d'ici 2027. La réduction des coûts de développement est significative : des prototypes fonctionnels peuvent être construits en quelques jours pour un coût marginal. Cependant, les gains réels dépendent d'une adoption encadrée et d'une politique de gouvernance claire.",
-        articleUrl: "https://www.gartner.com/en/newsroom/press-releases/2023-low-code-no-code-market-forecast",
+        text: "Le marché du No-Code/Low-Code dépasse 32 milliards de dollars en 2025, avec une croissance annuelle de 21 % depuis 2019. La France compte 4 millions de Citizen Developers actifs pour 800 000 développeurs professionnels. Les gains réels dépendent d'une adoption encadrée par la DSI et d'une politique de gouvernance claire.",
+        articleUrl: "https://journaldunet.com/web-tech/developpeur/1523355-low-code-no-code-nouveau-catalyseur-de-l-automatisation",
       },
     ],
   },
@@ -117,7 +117,7 @@ const HIGHLIGHTS = [
     label: "Plateformes",
     value: "Bubble · Airtable · Make · Zapier",
   },
-  { icon: Zap, label: "Enjeux", value: "Time-to-market · Autonomie · Coûts" },
+  { icon: Zap, label: "Enjeux", value: "Time-to-Market · Citizen Dev · MVP" },
 ];
 
 const SOURCES = [
@@ -250,9 +250,10 @@ function Veille() {
             <span className="text-[#60A5FA] font-semibold">
               l'essor du No-Code et du Low-Code en entreprise
             </span>
-            , une approche qui révolutionne la création d'applications via des
-            interfaces visuelles sans écriture de code manuel. Elle transforme
-            la relation entre les équipes métier et l'informatique.
+            , une approche logicielle permettant de concevoir des applications
+            via des interfaces visuelles et du glisser-déposer, sans écrire de
+            code manuel. Elle transforme la relation entre les équipes métier et
+            la DSI.
           </p>
 
           {/* Highlights */}

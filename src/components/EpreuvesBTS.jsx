@@ -744,9 +744,11 @@ const BLOCS = [
           "Suivi du ticket #1 de sa création à sa clôture",
         ],
         tags: ["GLPI", "Tickets", "SLA", "Files d'attente"],
-        screenZones: [
-          { instruction: "GLPI > Administration > Files d'attente — configuration des SLA", detail: "Screenshot de la configuration des files d'attente GLPI avec les délais SLA définis (P1 : 1h, P2 : 4h...)." },
-          { instruction: "GLPI > Assistance > Tableau de bord des tickets", detail: "Screenshot du tableau de bord montrant les tickets en cours, en attente et clôturés." },
+        images: [c8_1, c8_2, c8_5],
+        captions: [
+          "Ticket #1 créé dans GLPI — 'Impossible d'accéder à internet depuis le poste Marketing'",
+          "Ticket en cours de diagnostic — suivi de l'incident dans GLPI",
+          "Ticket #1 résolu et clôturé — SLA respecté, solution documentée",
         ],
       },
       {
@@ -806,6 +808,8 @@ const BLOCS = [
           "Corrections d'accessibilité : contrastes, balises alt, navigation clavier",
         ],
         tags: ["LinkedIn", "WCAG 2.1", "Accessibilité", "UX", "AEM"],
+        images: [linkedin],
+        captions: ["Page LinkedIn MangaDash — entreprise fictive du Hackathon : logo, secteur d'activité et présentation"],
       },
       {
         code: "C11", title: "Référencement des services en ligne et mesure de visibilité",
@@ -1165,38 +1169,7 @@ export default function EpreuvesBTS() {
         })}
       </div>
 
-      {/* ── E5 / E6 SUMMARY ── */}
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {[
-          { code: "E5", title: "Production et fourniture de services informatiques", coeff: 4, type: "Pratique et orale · 40 min", gradient: "from-[#3B82F6] to-[#06B6D4]", accent: "#60A5FA",
-            items: ["Développement AEM — BNP Paribas (Java, Sling, Jenkins)","Migration Angular & Spring Boot","Application iOS — Stage BNP (Swift, UIKit)","Pendu des artistes — Stage Deezer (Python, API REST)"] },
-          { code: "E6", title: "Parcours de professionnalisation", coeff: 3, type: "Orale · 20 min d'entretien", gradient: "from-[#8B5CF6] to-[#EC4899]", accent: "#A78BFA",
-            items: ["Alternance BNP Paribas — Full-Stack (2024–2026)","Stage BNP Paribas — Développeur Mobile (2023–2024)","Stage Deezer — Développeur Python / SQL (2023)","Portfolio en ligne (React + Tailwind) + veille technologique"] },
-        ].map(({ code, title, coeff, type, gradient, accent, items }) => (
-          <MDiv key={code} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }} viewport={{ once: true }}
-            className="rounded-2xl overflow-hidden border border-white/[0.07] bg-white/[0.02] shadow-xl">
-            <div className={`h-[3px] bg-gradient-to-r ${gradient}`} />
-            <div className="p-6">
-              <div className="flex items-center gap-4 mb-4">
-                <span className={`text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r ${gradient}`}>{code}</span>
-                <div>
-                  <h3 className="text-white font-bold text-sm leading-tight">{title}</h3>
-                  <p className="text-xs text-gray-500 mt-0.5">Coefficient {coeff} · {type}</p>
-                </div>
-              </div>
-              <ul className="space-y-2">
-                {items.map(item => (
-                  <li key={item} className="flex items-start gap-2.5 text-gray-300 text-xs">
-                    <Zap size={11} className="shrink-0 mt-0.5" style={{ color: accent }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </MDiv>
-        ))}
-      </div>
+
 
       {/* ── TÉLÉCHARGEMENT TABLEAU DE SYNTHÈSE ── */}
       <MDiv
@@ -1207,7 +1180,7 @@ export default function EpreuvesBTS() {
         className="mt-10 flex justify-center"
       >
         <a
-          href="/Tableau_Abdoulaye_Corrige.xlsx"
+          href="/Tableau_Abdoulaye_Final.xlsx"
           download
           className="group inline-flex items-center gap-3 px-6 py-4 rounded-2xl border border-[#60A5FA]/30 bg-[#60A5FA]/5 hover:bg-[#60A5FA]/10 hover:border-[#60A5FA]/50 transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-blue-900/10"
         >

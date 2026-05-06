@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, ExternalLink, Clock, CheckCircle, Layers } from "lucide-react";
+import { Github, ExternalLink, Clock, CheckCircle, Layers, FileDown } from "lucide-react";
 import mangaDash from "../assets/Projets/MangaDash.png";
 
 const MDiv = motion.div;
@@ -10,7 +10,7 @@ const PROJECTS = [
     title: "Site E-Commerce",
     year: "1ère année BTS SIO",
     description:
-      "Application e-commerce développée en première année de BTS SIO. Gestion des produits, panier, commandes et interface utilisateur complète.",
+      "Projet de groupe — application e-commerce développée en 1ère année de BTS SIO. Gestion des produits, panier, commandes et interface utilisateur complète.",
     tags: ["HTML", "CSS", "JavaScript", "PHP"],
     status: "done",
     gradient: "from-[#3B82F6] to-[#06B6D4]",
@@ -44,6 +44,7 @@ const PROJECTS = [
     gradient: "from-[#10B981] to-[#3B82F6]",
     accentColor: "#10B981",
     github: "https://github.com/billyTheKid001/gestionbibliotheque",
+    fiche: "/fiche_SP1_ClientLeger.pdf",
     image: null,
     col: 2,
   },
@@ -58,6 +59,7 @@ const PROJECTS = [
     gradient: "from-[#F59E0B] to-[#EF4444]",
     accentColor: "#F59E0B",
     github: "https://github.com/billyTheKid001/bibliotheque_back",
+    fiche: "/fiche_SP2_ClientLourd.pdf",
     image: null,
     col: 2,
   },
@@ -137,18 +139,30 @@ function ProjectCard({ project, delay }) {
         </div>
 
         {/* Actions */}
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] hover:border-white/[0.15] text-white text-xs font-semibold transition-all w-fit"
-          >
-            <Github size={13} />
-            Voir sur GitHub
-            <ExternalLink size={11} className="text-gray-500" />
-          </a>
-        )}
+        <div className="flex flex-wrap gap-2">
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] hover:border-white/[0.15] text-white text-xs font-semibold transition-all"
+            >
+              <Github size={13} />
+              Voir sur GitHub
+              <ExternalLink size={11} className="text-gray-500" />
+            </a>
+          )}
+          {project.fiche && (
+            <a
+              href={project.fiche}
+              download
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] hover:border-white/[0.15] text-gray-300 text-xs font-semibold transition-all"
+            >
+              <FileDown size={13} />
+              Fiche E6
+            </a>
+          )}
+        </div>
       </div>
     </MDiv>
   );
