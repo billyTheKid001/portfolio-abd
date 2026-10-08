@@ -437,7 +437,7 @@ function Veille() {
           {FAQ_ITEMS.map((item, i) => (
             <AccordionItem
               key={i}
-              item={item}
+              item={items}
               isOpen={openIndex === i}
               onToggle={() => setOpenIndex(openIndex === i ? null : i)}
               richContent={

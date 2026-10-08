@@ -13,20 +13,20 @@ const CONTACT_INFO = [
   {
     icon: Mail,
     label: "Email",
-    value: "abdoulaye@example.com",
-    href: "mailto:abdoulaye@example.com",
+    value: "cissokhoabdoulaye069@gmail.com",
+    href: "mailto:cissokhoabdoulaye069@gmail.com",
   },
   {
     icon: Github,
     label: "GitHub",
     value: "github.com/abdoulaye",
-    href: "#",
+    href: "https://github.com/billyTheKid001",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
     value: "linkedin.com/in/abdoulaye",
-    href: "#",
+    href: "https://www.linkedin.com/in/abdoulaye-cissokho-b5429b257/",
   },
 ];
 
